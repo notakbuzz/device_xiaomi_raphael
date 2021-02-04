@@ -13,9 +13,9 @@
 # limitations under the License.
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/p404_raphael.mk
+    $(LOCAL_DIR)/p404_trinket.mk
 
 COMMON_LUNCH_CHOICES := \
-    p404_raphael-user \
-    p404_raphael-userdebug \
-    p404_raphael-eng
+    p404_trinket-user \
+    p404_trinket-userdebug \
+    p404_trinket-eng

@@ -25,7 +25,7 @@
 
 LOCAL_PATH := $(call my-dir)
 
-ifneq ($(filter raphael,$(TARGET_DEVICE)),)
+ifneq ($(filter trinket,$(TARGET_DEVICE)),)
 include $(call all-makefiles-under,$(LOCAL_PATH))
 include $(CLEAR_VARS)
 

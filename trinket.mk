@@ -26,7 +26,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 $(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
 
 # Get non-open-source specific aspects
-$(call inherit-product-if-exists, vendor/xiaomi/raphael/raphael-vendor.mk)
+$(call inherit-product-if-exists, vendor/realme/trinket/trinket-vendor.mk)
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
@@ -238,7 +238,7 @@ PRODUCT_PACKAGES += \
     init.qcom.rc \
     init.qcom.sh \
     init.qcom.usb.rc \
-    init.raphael.rc \
+    init.trinket.rc \
     init.safailnet.rc \
     init.target.rc \
     ueventd.qcom.rc
@@ -261,7 +261,7 @@ PRODUCT_COPY_FILES += \
 
 # Lights
 PRODUCT_PACKAGES += \
-    android.hardware.light@2.0-service.xiaomi_msmnile
+    android.hardware.light@2.0-service.xiaomi_trinket
 
 # Media
 PRODUCT_PACKAGES += \
@@ -300,11 +300,6 @@ PRODUCT_COPY_FILES += \
     frameworks/av/media/libstagefright/data/media_codecs_google_c2.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_c2.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_c2_audio.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_c2_audio.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_c2_video.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_c2_video.xml
-
-PRODUCT_COPY_FILES += \
-    hardware/qcom/media/conf_files/msmnile/media_codecs_performance.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_performance.xml \
-    hardware/qcom/media/conf_files/msmnile/media_codecs_vendor_audio.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_vendor_audio.xml \
-    hardware/qcom/media/conf_files/msmnile/system_properties.xml:$(TARGET_COPY_OUT_VENDOR)/etc/system_properties.xml
 
 # Native Public Libraries
 PRODUCT_COPY_FILES += \
@@ -358,8 +353,8 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/perf/vendor.qti.hardware.perf@2.2-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/vendor.qti.hardware.perf@2.2-service.rc
 
 # PixelLiveWallpaper
-PRODUCT_PACKAGES += \
-    PixelLiveWallpaperPrebuilt
+#PRODUCT_PACKAGES += \
+#    PixelLiveWallpaperPrebuilt
 
 # Power
 PRODUCT_PACKAGES += \
@@ -407,7 +402,7 @@ PRODUCT_PACKAGES += \
 
 # Recovery
 PRODUCT_PACKAGES += \
-    librecovery_updater_raphael
+    librecovery_updater_trinket
 
 # RenderScript
 PRODUCT_PACKAGES += \
@@ -479,8 +474,8 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.vulkan.version-1_1.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.vulkan.version.xml
 
 # Wallpapers
-PRODUCT_PACKAGES += \
-    PixelLiveWallpaperPrebuilt
+#PRODUCT_PACKAGES += \
+#    PixelLiveWallpaperPrebuilt
 
 # WiFi
 PRODUCT_PACKAGES += \
@@ -514,7 +509,3 @@ PRODUCT_PACKAGES += \
     libdisplayconfig.qti.vendor \
     libqdMetaData \
     libqdMetaData.system
-
-# XiaomiParts
-PRODUCT_PACKAGES += \
-    XiaomiParts

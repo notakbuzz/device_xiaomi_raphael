@@ -14,9 +14,9 @@
 # limitations under the License.
 #
 
-BOARD_VENDOR := xiaomi
+BOARD_VENDOR := realme
 
-DEVICE_PATH := device/xiaomi/raphael
+DEVICE_PATH := device/realme/trinket
 
 BUILD_BROKEN_DUP_RULES := true
 
@@ -37,10 +37,10 @@ TARGET_2ND_CPU_ABI2 := armeabi
 TARGET_2ND_CPU_VARIANT := cortex-a75
 
 # Assert
-TARGET_OTA_ASSERT_DEVICE := raphael,raphaelin
+TARGET_OTA_ASSERT_DEVICE := RMX1911,RMX1925,RMX1927,RMX2030
 
 # Bootloader
-TARGET_BOOTLOADER_BOARD_NAME := msmnile
+TARGET_BOOTLOADER_BOARD_NAME := trinket
 TARGET_NO_BOOTLOADER := true
 
 # Kernel
@@ -55,15 +55,14 @@ BOARD_RAMDISK_OFFSET := 0x01000000
 BOARD_KERNEL_SEPARATED_DTBO := true
 TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_CLANG_COMPILE := true
-TARGET_KERNEL_CONFIG := raphael_defconfig
-TARGET_KERNEL_SOURCE := kernel/xiaomi/sm8150
+TARGET_KERNEL_CONFIG := trinket_defconfig
 TARGET_COMPILE_WITH_MSM_KERNEL := true
 ifeq ($(TARGET_PREBUILT_KERNEL),)
   TARGET_KERNEL_SOURCE := kernel/xiaomi/sm8150
 endif
 
 # Platform
-TARGET_BOARD_PLATFORM := msmnile
+TARGET_BOARD_PLATFORM := trinket
 
 # Audio
 AUDIO_FEATURE_ENABLED_AAC_ADTS_OFFLOAD := true
@@ -96,10 +95,6 @@ TARGET_FS_CONFIG_GEN := $(DEVICE_PATH)/config.fs
 
 # FM
 BOARD_HAVE_QCOM_FM := true
-
-# FOD
-TARGET_SURFACEFLINGER_FOD_LIB := //$(DEVICE_PATH):libfod_extension.xiaomi_raphael
-TARGET_USES_FOD_ZPOS := true
 
 # HIDL
 DEVICE_FRAMEWORK_MANIFEST_FILE := $(DEVICE_PATH)/framework_manifest.xml
@@ -154,7 +149,7 @@ TARGET_RECOVERY_PIXEL_FORMAT := "BGRA_8888"
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/fstab.qcom
 
 # Releasetools
-TARGET_RECOVERY_UPDATER_LIBS := librecovery_updater_raphael
+TARGET_RECOVERY_UPDATER_LIBS := librecovery_updater_trinket
 TARGET_RELEASETOOLS_EXTENSIONS := $(DEVICE_PATH)
 
 # RIL
@@ -173,8 +168,8 @@ BOARD_PLAT_PUBLIC_SEPOLICY_DIR += $(DEVICE_PATH)/sepolicy/public
 BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
 
 # Vendor init
-TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):libinit_raphael
-TARGET_RECOVERY_DEVICE_MODULES := libinit_raphael
+TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):libinit_trinket
+TARGET_RECOVERY_DEVICE_MODULES := libinit_trinket
 
 # Verified Boot
 BOARD_AVB_ENABLE := true
@@ -207,4 +202,4 @@ BUILD_BROKEN_USES_BUILD_COPY_HEADERS := true
 BUILD_BROKEN_PREBUILT_ELF_FILES := true
 
 # Inherit from the proprietary version
--include vendor/xiaomi/raphael/BoardConfigVendor.mk
+-include vendor/realme/trinket/BoardConfigVendor.mk

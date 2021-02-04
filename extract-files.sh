@@ -18,8 +18,8 @@
 
 set -e
 
-DEVICE=raphael
-VENDOR=xiaomi
+DEVICE=trinket
+VENDOR=realme
 
 # Load extract_utils and do some sanity checks
 MY_DIR="${BASH_SOURCE%/*}"
